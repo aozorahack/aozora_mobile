@@ -19,6 +19,32 @@
       %a.mdl-navigation__link{href: '/index_pages/index_top.html'} 作品一覧
       %a.mdl-navigation__link{href: '/index_pages/whatsnew1.html'} 新着情報
 
-  %main.mdl-layout__content
+  %main.mdl-layout__content{style: 'flex: 1 0 auto'}
     .page-content
       = yield
+
+  %footer.mdl-mega-footer
+    .mdl-mega-footer__middle-section
+      .mdl-mega-footer__drop-down-section
+        %input.mdl-mega-footer__heading-checkbox{type: 'checkbox', checked: true}
+        %h1.mdl-mega-footer__heading 資料室
+        %ul.mdl-mega-footer__link-list
+          %li
+            %a{href: 'http://www.aozora.gr.jp/aozora-manual/'} 青空文庫作業マニュアル
+          %li
+            %a{href: 'http://www.aozora.gr.jp/annotation/'} 注記一覧
+          %li
+            %a{href: 'http://kumihan.aozora.gr.jp/'} 組版案内
+            / TODO: 足す
+      .mdl-mega-footer__drop-down-section
+        %input.mdl-mega-footer__heading-checkbox{type: 'checkbox', checked: true}
+        %h1.mdl-mega-footer__heading 運営について
+        %ul.mdl-mega-footer__link-list
+          %li
+            %a{href: 'http://www.aozora.gr.jp/cards/001790/card56572.html'} 青空文庫の提案
+          %li
+            %a{href: 'http://www.aozora.gr.jp/aozora_bunkono_shikumi.html'} 青空文庫のしくみ
+          %li
+            %a{href: 'http://www.aozora.gr.jp/kaikei/index.html'} 会計報告
+            / TODO: 足す
+      / TODO: 足す
