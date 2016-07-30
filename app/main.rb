@@ -3,6 +3,7 @@ require_relative 'book'
 
 get '/' do
   index = Aozora::Index.new
+
   haml :index, locals: {
     index: index,
     hoge: 'fuga',
