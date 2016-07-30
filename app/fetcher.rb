@@ -10,8 +10,9 @@ module Aozora
       @url = "#{BASE_URI}/#{url}"
     end
 
-    def fetch(charset = 'utf-8')
+    def fetch(charset = nil)
       html = open(url) do |f|
+        charset ||= f.charset
         f.read
       end
       Nokogiri::HTML.parse(html, nil, charset)
