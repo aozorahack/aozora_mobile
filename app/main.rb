@@ -12,6 +12,7 @@ end
 get %r{cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
   book = Aozora::Book.new(person_id, book_id, book_format_id)
   haml :book, locals: {
-    book: book
+    book: book,
+    charset: 'Shift_JIS'
   }
 end
