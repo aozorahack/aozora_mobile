@@ -105,7 +105,6 @@ div.keigakomi
   display: inline-table
   vertical-align: bottom
   position: relative
-  top: -0.25em
 
 @mixin bouten_base
   font-weight: normal
@@ -120,9 +119,17 @@ div.keigakomi
   line-height: 0
   text-align: center
 
+@mixin bouten_below
+  font-weight: normal
+  display: table-footer-group
+  font-size: 0.5em
+  line-height: 0
+  text-align: center
+
 .sesame_dot
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -133,6 +140,7 @@ div.keigakomi
 .white_sesame_dot
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -143,6 +151,7 @@ div.keigakomi
 .black_circle
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -152,6 +161,7 @@ div.keigakomi
 .white_circle
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -161,6 +171,7 @@ div.keigakomi
 .black_up-pointing_triangle
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten
   span:after
@@ -170,6 +181,7 @@ div.keigakomi
 .white_up-pointing_triangle
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -179,6 +191,7 @@ div.keigakomi
 .bullseye
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -188,6 +201,7 @@ div.keigakomi
 .fisheye
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -197,6 +211,7 @@ div.keigakomi
 .saltire
   span
     @include bouten
+    top: -0.25em
     b
       @include bouten_base
   span:after
@@ -204,49 +219,87 @@ div.keigakomi
     content: "\00D7"
 
 .sesame_dot_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/boten.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    font-family: serif
+    content: "\FE45"
 
 .white_sesame_dot_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/shirogoma.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    font-family: serif
+    content: "\FE46"
 
 .black_circle_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/maru.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\25CF"
 
 .white_circle_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/shiromaru.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\25CB"
 
 .black_up-pointing_triangle_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/kurosankaku.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten
+  span:after
+    @include bouten_below
+    content: "\25B2"
 
 .white_up-pointing_triangle_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/shirosankaku.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\25B3"
 
 .bullseye_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/nijyumaru.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\25CE"
 
 .fisheye_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/jyanome.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\25C9"
 
 .saltire_after
-  font-style: normal
-  padding: 0 0 7px 0
-  background: url("css/kentenbosen/after/ten/batsu.png") repeat-x
+  span
+    @include bouten
+    b
+      @include bouten_base
+  span:after
+    @include bouten_below
+    content: "\00D7"
 
 .subscript
   font-size: small
