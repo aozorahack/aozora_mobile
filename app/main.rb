@@ -1,4 +1,5 @@
 require_relative 'index'
+require_relative 'top'
 require_relative 'book'
 require_relative 'card'
 require_relative 'page'
@@ -13,7 +14,17 @@ get '/' do
   end
 end
 
-get %r{cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
+get '/index_pages/index_top.html' do
+  top = Aozora::Top.new
+  haml :main_layout do
+    haml :top, locals: {
+      tables: top.tables,
+      headers: top.headers
+    }
+  end
+end
+
+get %r{/cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
   book = Aozora::Book.new(person_id, book_id, book_format_id)
   charset = 'Shift_JIS'
   content_type :html, charset: charset
@@ -38,6 +49,10 @@ end
 
 get '/css/index.css' do
   sass :'sass/index'
+end
+
+get '/css/top.css' do
+  sass :'sass/top'
 end
 
 get '/css/main.css' do

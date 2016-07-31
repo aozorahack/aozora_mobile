@@ -1,0 +1,8 @@
+- content_for :head do
+  %link{rel: 'stylesheet', href: '/css/top.css'}
+
+%h1 総合インデックス
+- tables.each_with_index do |table, i|
+  - if i % 2 == 0
+    %h2= headers[i / 2]
+  != table.to_html.encode('utf-8')
