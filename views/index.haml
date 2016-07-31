@@ -8,8 +8,7 @@
 .aozora-card.latest-work.mdl-card.mdl-shadow--2dp
   .mdl-card__title
     %h2.mdl-card__title-text 最新作品
-  .mdl-card__supporting-text
-    森田 正馬 『神経質に対する余の特殊療法』
+  .mdl-card__supporting-text= index.info[:latest_work_name]
   .mdl-card__actions.mdl-card--border
-    %a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect{href: 'http://www.aozora.gr.jp/cards/001864/card57438.html'}
+    %a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect{href: index.info[:latest_work_url]}
       読む

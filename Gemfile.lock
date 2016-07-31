@@ -4,6 +4,7 @@ GEM
     backports (3.6.8)
     ffi (1.9.14)
     ffi (1.9.14-x64-mingw32)
+    ffi (1.9.14-x86-mingw32)
     haml (4.0.7)
       tilt
     listen (3.1.5)
@@ -16,6 +17,9 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     nokogiri (1.6.8-x64-mingw32)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    nokogiri (1.6.8-x86-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
@@ -47,6 +51,7 @@ GEM
 PLATFORMS
   ruby
   x64-mingw32
+  x86-mingw32
 
 DEPENDENCIES
   haml
