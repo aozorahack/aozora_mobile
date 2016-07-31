@@ -1,8 +1,15 @@
 - content_for :head do
   %link{rel: 'stylesheet', href: '/css/card.css'}
+  %link{rel: 'stylesheet', href: 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'}
 
 .head-area
   %h1.title 神経質に対する余の特殊療法
-  %p.author 森田 正馬
+  %p.author
+    %a{href: 'http://www.aozora.gr.jp/index_pages/person1864.html'} 森田 正馬
   %button.read-button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
-    %i.material-icons arrow_forward
+    %i.ion-ios-book-outline
+
+.about-work
+  .letter-types 旧字旧仮名
+  .about-work-description 日本を代表する精神医学者である森田正馬の精神療法の考え方を伝える貴重な資料である。（貴重資料保存会）
+  .remarks 「第八章　神經質の療法」の「五　神経質に対する余の特殊療法」のさらにその一項目だけの入力です。
