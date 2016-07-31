@@ -1,5 +1,6 @@
 require_relative 'index'
 require_relative 'book'
+require_relative 'card'
 
 get '/' do
   index = Aozora::Index.new
@@ -7,7 +8,6 @@ get '/' do
   haml :main_layout do
     haml :index, locals: {
       index: index,
-      hoge: 'fuga',
     }
   end
 end
@@ -20,6 +20,19 @@ get %r{cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
     book: book,
     charset: charset
   }
+end
+
+get %r{/cards/(\d{6})/card(\d+)} do |person_id, book_id|
+  card = Aozora::Card.new(person_id, book_id)
+  haml :main_layout do
+    haml :card, locals: {
+      card: card,
+    }
+  end
+end
+
+get '/css/card.css' do
+  sass :'sass/card'
 end
 
 get '/css/index.css' do
