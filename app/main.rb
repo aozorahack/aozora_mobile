@@ -21,9 +21,9 @@ get %r{cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
 end
 
 get '/css/index.css' do
-  sass :'/sass/index'
+  sass :'sass/index'
 end
 
 get '/css/main.css' do
-  sass :'/sass/main'
+  sass :'sass/main'
 end
