@@ -1,6 +1,7 @@
 require_relative 'index'
 require_relative 'book'
 require_relative 'card'
+require_relative 'page'
 
 get '/' do
   index = Aozora::Index.new
@@ -45,4 +46,13 @@ end
 
 get '/css/book.css' do
   sass :'sass/book'
+end
+
+get '/*' do
+  page = Aozora::Page.new(request.path.gsub(%r{^/}, ''))
+  haml :main_layout do
+    haml :page, locals: {
+      page: page
+    }
+  end
 end
