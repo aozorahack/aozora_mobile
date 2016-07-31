@@ -83,27 +83,17 @@ module Aozora
           tr.children.at('td')&.text&.include?('人物について')
         end
 
-        author_data[:description] = description_el.at_css('td:nth-child(2)').text
+        unless description_el.nil?
+          wikipedia_el = description_el.at_css('a:nth-child(2)')
 
-        description_el = author_data_el.css('tr').find do |tr|
-          tr.children.at('td')&.text&.include?('人物について')
+          unless wikipedia_el.nil?
+            author_data[:wikipedia] = wikipedia_el.attribute('href')
+          end
+
+          description_el.css('a').remove
+
+          author_data[:description] = description_el.at_css('td:nth-child(2)').text.gsub('「」', '')
         end
-
-        author_data[:description] = description_el.at_css('td:nth-child(2)').text
-
-        description_el = author_data_el.css('tr').find do |tr|
-          tr.children.at('td')&.text&.include?('人物について')
-        end
-
-        wikipedia_el = description_el.at_css('a:nth-child(2)')
-
-        unless wikipedia_el.nil?
-          author_data[:wikipedia] = wikipedia_el.attribute('href')
-        end
-
-        description_el.css('a').remove
-
-        author_data[:description] = description_el.at_css('td:nth-child(2)').text.gsub('「」', '')
 
         author_data
       end
