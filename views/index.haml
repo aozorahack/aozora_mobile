@@ -1,1 +1,14 @@
-%h1 インターネットの電子図書館、青空文庫へようこそ。
+- content_for :head do
+  %link{rel: 'stylesheet', href: '/css/index.css'}
+
+%h1.top-header
+  %img.top-header-logo{src: 'http://www.aozora.gr.jp/images/top_logo.png'}
+  .top-header-text インターネットの電子図書館、青空文庫へようこそ。
+
+.aozora-card.latest-work.mdl-card.mdl-shadow--2dp
+  .mdl-card__title
+    %h2.mdl-card__title-text 最新作品
+  .mdl-card__supporting-text= index.info[:latest_work_name]
+  .mdl-card__actions.mdl-card--border
+    %a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect{href: index.info[:latest_work_url]}
+      読む
