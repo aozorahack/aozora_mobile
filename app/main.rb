@@ -19,3 +19,7 @@ get %r{cards/(\d{6})/files/(\d+)_(\d+)} do |person_id, book_id, book_format_id|
     charset: 'Shift_JIS'
   }
 end
+
+get '/css/index.css' do
+  sass :'/sass/index'
+end
