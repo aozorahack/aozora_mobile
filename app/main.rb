@@ -23,3 +23,7 @@ end
 get '/css/index.css' do
   sass :'/sass/index'
 end
+
+get '/css/main.css' do
+  sass :'/sass/main'
+end
