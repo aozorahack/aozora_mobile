@@ -1,0 +1,47 @@
+- content_for :head do
+  %link{rel: 'stylesheet', href: '/css/card.css'}
+  %link{rel: 'stylesheet', href: 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'}
+  %script#twitter-wjs{async: true, src: 'https://platform.twitter.com/widgets.js'}
+  %script#facebook-jssdk{async: true, src: '//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7&appId=576904635822585'}
+
+.head-area
+  %h1.title= card.info[:title]
+  %p.author
+    %a{href: card.info[:author_url]}= card.info[:author]
+  %a.read-button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored{href: card.info[:body_url]}
+    %i.ion-ios-book-outline
+
+.about-work
+  .letter-types= card.info[:letter_type]
+  .about-work-description= card.info[:description]
+  .remarks= card.info[:remarks]
+  .links
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://booklog.jp/item/7/057438'} ブクログ
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://aozora.binb.jp/reader/main.html?cid=57438'} 青空 in Browser
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://www.satokazzz.com/airzoshi/reader.php?url=http%3A%2F%2Fwww.aozora.gr.jp%2Fcards%2F001864%2Ffiles%2F57438_txt_59457.zip&home=http%3A%2F%2Fwww.aozora.gr.jp%2Fcards%2F001864%2Fcard57438.html&title=%E7%A5%9E%E7%B5%8C%E8%B3%AA%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E4%BD%99%E3%81%AE%E7%89%B9%E6%AE%8A%E7%99%82%E6%B3%95#'} えあ草子
+  .shares
+    %a.twitter-share-button{href: 'https://twitter.com/intent/tweet', 'data-size': 'large'} Tweet
+    .fb-like{'data-layout': 'button', 'data-action': 'like', 'data-size': 'large', 'data-share': 'false'}
+
+.about-author
+  .authors
+    - card.info[:authors].each do |author|
+      .author
+        .role= author[:role]
+        .name
+          = author[:name]
+          %small.kana= author[:kana]
+        .description= author[:description]
+        - if author[:wikipedia]
+          .externals
+            %a.wikipedia.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent{href: author[:wikipedia]} Wikipediaで読む
+
+.about-planter
+  %h2 工作員データ
+  %ul.planters.mdl-list
+    - card.info[:planters].each do |planter|
+      %li.planter.mdl-list__item.mdl-list__item--two-line
+        %span.mdl-list__item-primary-content
+          %i.material-icons.mdl-list__item-avatar person
+          %span= planter[:name]
+          %span.mdl-list__item-sub-title= planter[:role]
