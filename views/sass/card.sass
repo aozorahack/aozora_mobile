@@ -34,3 +34,26 @@ a
   .remarks
     margin: 1em
     color: #aaa
+
+  .links
+    display: -webkit-flex
+    display: flex
+
+    margin: 1em
+
+    & > *
+      display: inline-block
+      vertical-align: middle
+      padding: 0
+      -webkit-flex-grow: 1
+      flex-grow: 1
+
+      &:not(:last-child)
+        margin-right: 6px
+
+  .shares
+    text-align: center
+
+    & > *
+      display: inline-block
+      vertical-align: middle

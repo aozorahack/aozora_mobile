@@ -1,6 +1,8 @@
 - content_for :head do
   %link{rel: 'stylesheet', href: '/css/card.css'}
   %link{rel: 'stylesheet', href: 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'}
+  %script#twitter-wjs{async: true, src: 'https://platform.twitter.com/widgets.js'}
+  %script#facebook-jssdk{async: true, src: '//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7&appId=576904635822585'}
 
 .head-area
   %h1.title 神経質に対する余の特殊療法
@@ -13,3 +15,10 @@
   .letter-types 旧字旧仮名
   .about-work-description 日本を代表する精神医学者である森田正馬の精神療法の考え方を伝える貴重な資料である。（貴重資料保存会）
   .remarks 「第八章　神經質の療法」の「五　神経質に対する余の特殊療法」のさらにその一項目だけの入力です。
+  .links
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://booklog.jp/item/7/057438'} ブクログ
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://aozora.binb.jp/reader/main.html?cid=57438'} 青空 in Browser
+    %a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{href: 'http://www.satokazzz.com/airzoshi/reader.php?url=http%3A%2F%2Fwww.aozora.gr.jp%2Fcards%2F001864%2Ffiles%2F57438_txt_59457.zip&home=http%3A%2F%2Fwww.aozora.gr.jp%2Fcards%2F001864%2Fcard57438.html&title=%E7%A5%9E%E7%B5%8C%E8%B3%AA%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E4%BD%99%E3%81%AE%E7%89%B9%E6%AE%8A%E7%99%82%E6%B3%95#'} えあ草子
+  .shares
+    %a.twitter-share-button{href: 'https://twitter.com/intent/tweet', 'data-size': 'large'} Tweet
+    .fb-like{'data-layout': 'button', 'data-action': 'like', 'data-size': 'large', 'data-share': 'false'}
