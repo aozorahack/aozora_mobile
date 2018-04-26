@@ -4,6 +4,15 @@ require_relative 'book'
 require_relative 'card'
 require_relative 'page'
 
+helpers do
+  def proxy
+    fetcher = Aozora::Fetcher.new(request.path)
+    content, c_type = fetcher.proxy
+    content_type c_type
+    content
+  end
+end
+
 get '/' do
   index = Aozora::Index.new
 
@@ -61,6 +70,14 @@ end
 
 get '/css/book.css' do
   sass :'sass/book'
+end
+
+get '/*.ico' do
+  proxy
+end
+
+get '/images/*.png' do
+  proxy
 end
 
 get '/*' do
