@@ -4,7 +4,7 @@ module Aozora
 
     attr_reader :url
 
-    BASE_URI = 'http://www.aozora.gr.jp'
+    BASE_URI = 'https://www.aozora.gr.jp'
 
     def initialize(url)
       @url = "#{BASE_URI}/#{url}"
